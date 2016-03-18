@@ -25,6 +25,511 @@ body textarea:required:valid
 	color: #666
 
 //Custom Styles Here
+#promo-text
+	background-repeat: no-repeat;
+	background-position: 100% 0;
+	background-size: inherit;
+	padding-bottom: 138px;
+	.text-wrap
+		padding-top: 120px			 
+		p
+			margin-bottom: 30px
+#tabs
+	.tabs-link
+		text-align: center
+		font-size: 0
+		li
+			display: inline-block
+			font-size: 15px
+			width: 20%				
+			a
+				display: block
+				position: relative
+				color: $greyBold
+				background-color: $greyLight
+				text-transform: uppercase	
+				padding: 26px 0 15px;
+				z-index: 10
+				transition: all 0.3s		
+				&:hover
+					background-color: $main
+					color: $white
+				i
+						display: block	
+						font-size: 30px	
+						margin-bottom: 10px
+			&.active a
+				background-color: $main
+				color: $white
+				&:before
+					position: absolute
+					content: ''	
+					left: 0
+					width: 0;
+					height: 0;
+					bottom: -14px
+					border-style: solid;
+					border-width: 15px 114px 0;
+					border-color: $main transparent transparent transparent;
+.tabs-wrap
+	.tab
+		position: relative		
+		display: none
+		&:first-child
+			display: block			
+		.tab-header,.tab-footer
+			height: 690px		
+			overflow: hidden
+			position: relative
+			.img-wrap				
+				img
+					height: 690px
+					width: auto
+			.descr-wrap			
+				position: absolute
+				top: 0
+				right: 0
+				height: 100%
+				width: 68%
+				min-width: 500px
+				background-color: $white
+				padding: 65px 30px 0 10px			
+				color: $greyBold
+				background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 100%)
+				background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,1) 100%)
+				background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,1) 100%)
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 )
+				.descr
+					max-width: 550px
+					position: absolute
+					top: 50%
+					transform: translateY(-50%)
+					-moz-transform: translateY(-50%)
+					-o-transform: translateY(-50%)
+					right: 40px
+				h2
+					font-size: 32px!important
+					font-family: "RobotoRegular", sans-serif
+					line-height: 36px!important
+					margin-bottom: 20px!important
+					background-color: transparent!important
+				p
+					margin-bottom: 35px
+					line-height: 23px
+				h3
+					font-size: 15px
+					margin-bottom: 20px
+				ul
+					li
+						margin-bottom: 20px
+						position: relative
+						padding-left: 40px
+						&:before
+							position: absolute
+							content: "\2713"
+							width: 30px
+							height: 30px
+							border-radius: 50%
+							border: 1px solid $button
+							color: $button
+							line-height: 30px
+							text-align: center
+							left: 0
+							top: 5px
+		.tab-footer
+			text-align: right
+			.descr-wrap				
+				left: 0
+				right: inherit
+				text-align: left				
+				background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 100%)
+				background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 55%,rgba(255,255,255,0) 100%)
+				background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 55%,rgba(255,255,255,0) 100%)
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 )
+				.descr	
+					left: 40px
+
+#ip-phone,#web,#conference,#contact-center,#mobile
+	text-align: center	
+	h2
+		background-color: $white
+		line-height: 135px
+		font-size: 35px
+		color: $greyBold
+		font-family: "RobotoRegular", sans-serif
+	.item-ip
+		padding: 45px 10px 10px 10px
+		position: relative
+		color: $white
+		min-height: 325px
+		transition: background 0.3s
+		background-color: $main
+		cursor: default
+		border-top: 1px solid $white
+		&:before
+			position: absolute
+			content: ''
+			width: 1px 
+			height: 100%
+			background-color: $white
+			right: 0
+			top: 0
+		&:hover
+			background-color: $button
+		i
+			font-size: 40px
+		h3
+			margin-top: 10px
+			font-family: "RobotoRegular", sans-serif
+			font-weight: 100
+		p
+			margin-top: 15px
+	.col-md-4:last-child .item-ip:before
+		display: none
+		
+#future
+	padding-top: 40px
+	padding-bottom: 40px
+	color: $greyBold
+	text-align: center
+	background-image: url("../img/future_bg.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	h2
+		font-size: 35px
+		font-family: "RobotoRegular", sans-serif
+		margin-bottom: 10px
+	> p
+		margin-bottom: 20px
+		line-height: 20px
+	ul.left
+		text-align: right 
+		position: relative
+		// padding-right: 20px
+		&:before
+			position: absolute
+			content: ''
+			width: 4px
+			height: 75%
+			background-image: url("../img/dot_bg.png")
+			background-repeat: repeat-y
+			top: 10%
+			right: -34px
+		li
+			padding-right: 70px
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				width: 3px 
+				height: 3px
+				background-color: #CECECE
+				top: 40px
+				right: -9px
+			h3
+				margin-bottom: 10px
+			i
+				position: absolute
+				width: 50px
+				height: 50px
+				top: 20px
+				right: 10px
+				font-size: 26px
+				background-color: $white
+				border: 1px solid $greyBold
+				text-align: center
+				line-height: 50px
+				border-radius: 50%
+
+	ul.right
+		text-align: left
+		padding-left: 35px
+		li
+			padding-left: 70px
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				width: 3px 
+				height: 3px
+				background-color: #CECECE
+				top: 40px
+				left: -9px
+			h3
+				margin-bottom: 10px
+			i
+				font-size: 26px
+				position: absolute
+				width: 50px
+				height: 50px
+				top: 20px
+				left: 10px
+				background-color: $white
+				border: 1px solid $greyBold
+				text-align: center
+				line-height: 50px
+				border-radius: 50%
+.dop-info
+	.text-block
+		position: absolute
+		top: 50%
+		width: 50%
+		transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-o-transform: translateY(-50%)
+		img
+			margin-bottom: -50px
+	.item:nth-child(odd)
+		min-height: 460px
+		.text-block
+			left: 30px
+			text-align: right
+		.img-wrap
+			float: right
+			transform: translateY(30%)
+			-moz-transform: translateY(30%)
+			-o-transform: translateY(30%)
+	.item:nth-child(even)
+		min-height: 460px
+		.text-block
+			right: 30px
+			text-align: left
+		.img-wrap
+			float: left
+			transform: translateY(30%)
+			-moz-transform: translateY(30%)
+			-o-transform: translateY(30%)
+
+#implement
+	background-color: $main	
+	color: $white		
+	max-height: 400px
+	h2		
+		line-height: 135px
+		font-size: 35px		
+		font-family: "RobotoRegular", sans-serif	
+		text-align: center	
+	.implement-item
+		text-align: left
+		padding-left: 50px
+		margin-top: 23px
+		padding-bottom: 15px
+		h3		
+			position: relative
+			margin-bottom: 15px
+			i
+				position: absolute
+				font-size: 40px
+				left: -55px
+				top: -12px
+		ul
+			list-style-type: disc
+			li
+				margin-bottom: 10px
+#slider
+	text-align: center
+	padding-top: 65px
+	padding-bottom: 60px
+	color: $greyBold
+	h2
+		margin-bottom: 20px
+		font-size: 30px
+		font-family: "RobotoRegular", sans-serif	
+	>p
+		margin-bottom: 55px
+		font-size: 18px
+	.item
+		min-height: 365px
+		text-align: left
+		.img-wrap
+			text-align: center
+			height: 115px
+			width: auto
+		.title
+			border: 1px solid #D3D3D3
+			padding: 14px 0
+			p
+				color: #8B8B8B
+			h4
+				margin-top: 20px
+				font-size: 13px
+		.text-block
+			background-color: $greyLight
+			padding-top: 20px
+			min-height: 220px
+			h3
+				font-size: 15px
+			p
+				font-size: 14px
+				margin-top: 15px
+				line-height: 20px
+				color: #8B8B8B
+#countdown
+	background-color: $main
+	text-align: center
+	color: $white
+	padding-top: 60px	
+	h2
+		margin-bottom: 20px
+		font-size: 30px
+		font-family: "RobotoRegular", sans-serif	
+		margin-bottom: 5px
+	h4
+		font-size: 22px
+		margin-bottom: 25px
+	>p
+		font-size: 18px		
+		line-height: 22px
+		padding-bottom: 50px
+	.countdown-item
+		position: relative
+		height: 355px
+		overflow: hidden
+		img
+			min-height: 100%
+			min-width: 100%
+		.title
+			position: absolute
+			background-color: rgba(255,255,255, .7)
+			width: 100%
+			line-height: 90px
+			left: 0
+			bottom: 0
+			font-size: 30px
+			color: $greyBold
+	.text-block
+		background-image: url("../img/coun2.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+		height: 355px
+		color: $greyBold
+		padding-top: 60px
+		padding-left: 90px
+		text-align: left
+		h3
+			font-size: 30px
+			font-family: "RobotoRegular", sans-serif	
+			font-weight: 100
+			margin-bottom: 18px
+		p
+			font-size: 18px
+			line-height: 22px
+	.countdown-block
+		width: 100%
+		max-width: 810px
+		margin: 0 auto
+		background-color: $white
+		text-align: center
+		padding-top: 45px
+		min-height: 460px
+		h2
+			font-size: 18px
+			line-height: 22px
+			color: $greyBold
+form.form
+	padding: 0 90px
+	input[type="text"],input[type="email"]
+		display: inline-block
+		width: 225px
+		margin: 3px
+		height: 40px
+		border-radius: 4px
+		box-shadow: inset 0px 1px 3px #E4E4E4
+		border: 1px solid #e1e4e6;
+		text-indent: 10px
+
+
+#contacts
+	background-repeat: no-repeat
+	background-size: cover
+	min-height: 480px
+	padding-top: 53px	
+	.form
+		background-color: $white
+		padding: 0
+		padding-left: 30px
+		padding-top: 30px
+		min-height: 390px
+		font-size: 15px
+		h4
+			font-size: 18px
+			line-height: 22px
+			text-align: center
+			margin-bottom: 25px
+		p
+			font-size: 12px
+			color: #919090
+			margin-bottom: 15px
+			input
+				margin-right: 5px
+				display: inline-block
+		fieldset
+			border: none
+			margin: 0
+			margin-top: 28px			
+
+
+
+	.text-block	
+		min-height: 390px
+		background-color: $buttonT
+		border-radius: 2px
+		color: #fff
+		padding: 20px 0 0 15px;
+		h2
+			font-size: 44px
+			font-family: "RobotoRegular", sans-serif
+			font-weight: 100
+		h4
+			font-family: "RobotoRegular", sans-serif
+			font-weight: 100
+			font-size: 20px
+			line-height: 28px
+			margin-bottom: 35px
+footer
+	background-color: #404040
+	min-height: 55px
+	line-height: 55px
+	color: #949494
+	ul
+		display: inline-block
+		margin-left: 10px
+		li
+			display: inline-block
+			a
+				display: block
+				width: 35px
+				height: 35px
+				border-radius: 50%
+				line-height: 35px
+				color: #949494
+				border: 1px solid #949494
+				transition: color 0.3s
+				text-align: center
+				&:hover
+					color: $white
+#clock
+	font-size: 0
+	padding-top: 24px
+	margin-bottom: 41px
+	div
+		display: inline-block
+		margin: 3px 15px
+		font-size: 15px
+
+		p
+			background-color: #000
+			font-size: 50px
+			padding: 0 2px
+			border-radius: 4px
+			line-height: 63px
+		span
+			color: #000
+			font-weight: bold
+
+
+
+
 
 
 //ALWAYS END

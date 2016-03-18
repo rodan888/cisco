@@ -70,6 +70,15 @@
 
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
+@media only screen and (min-width : 1366px)
 	/**/
-
+	.tabs-wrap .tab .tab-footer .descr-wrap, .tabs-wrap .tab .tab-header .descr-wrap
+		width: 80%
+	header
+		.top-image
+			.descr
+				background: -moz-linear-gradient(left,  $main 40%, rgba(255,255,255,0) 80%)
+				background: -webkit-linear-gradient(left,  $main 40%,rgba(255,255,255,0) 80%)
+				background: linear-gradient(to right,  $main 40%,rgba(255,255,255,0) 80%)
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bbba7', endColorstr='#00ffffff',GradientType=1 )
+				
