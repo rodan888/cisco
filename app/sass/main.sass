@@ -26,10 +26,11 @@ body textarea:required:valid
 
 //Custom Styles Here
 #promo-text
-	background-repeat: no-repeat;
-	background-position: 100% 0;
-	background-size: inherit;
-	padding-bottom: 138px;
+	background-repeat: no-repeat
+	background-position: 100% 50%
+	background-size: inherit
+	padding-bottom: 138px
+	position: relative
 	.text-wrap
 		padding-top: 120px			 
 		p
@@ -210,7 +211,7 @@ body textarea:required:valid
 			position: absolute
 			content: ''
 			width: 4px
-			height: 75%
+			height: 68px
 			background-image: url("../img/dot_bg.png")
 			background-repeat: repeat-y
 			top: 10%
@@ -218,6 +219,7 @@ body textarea:required:valid
 		li
 			padding-right: 70px
 			position: relative
+			min-height: 140px
 			&:before
 				position: absolute
 				content: ''
@@ -247,6 +249,7 @@ body textarea:required:valid
 		li
 			padding-left: 70px
 			position: relative
+			min-height: 140px
 			&:before
 				position: absolute
 				content: ''
@@ -303,7 +306,7 @@ body textarea:required:valid
 #implement
 	background-color: $main	
 	color: $white		
-	max-height: 400px
+	min-height: 400px
 	h2		
 		line-height: 135px
 		font-size: 35px		
@@ -496,6 +499,7 @@ footer
 		margin-left: 10px
 		li
 			display: inline-block
+			vertical-align: middle
 			a
 				display: block
 				width: 35px
@@ -528,6 +532,12 @@ footer
 			font-weight: bold
 
 
+div#particles-js
+	position: absolute
+	top: 0
+	right: 0
+	width: 50%
+	height: 100%
 
 
 
