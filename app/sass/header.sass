@@ -2,6 +2,7 @@
 @import "_vars.sass"
 
 +font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
++font-face("RobotoLight", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
 +font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
 
 +font-face("CiscoExtralight", "../fonts/ciscosansttextralight-webfont/ciscosansttextralight-webfont", $file-formats: eot woff ttf)
@@ -14,7 +15,7 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.6
-	font-family: "RobotoRegular", sans-serif
+	font-family: "RobotoLight", sans-serif
 	overflow-x: hidden
 
 .hidden
@@ -25,7 +26,11 @@ body
 	color: $button
 .mw8
 	max-width: 810px
-	margin: 30px auto 0
+	margin: 0px auto 0
+.mt2
+	margin-top: 20px
+.mb2
+	margin-bottom: 20px
 
 a
 	&:hover
@@ -33,7 +38,8 @@ a
 		color: $blak
 
 h1,h2,h3,h4,h5,h6
-	font-family: "OpenSansBold",sans-serif
+	font-family: "RobotoLight",sans-serif
+	font-weight: 100
 
 h1,h2,h3,h4,h5,h6,ul,p
 	margin: 0
@@ -54,8 +60,9 @@ input,textarea,button
 	border-radius: 4px
 	border: 1px solid $button
 	&:hover		
-		background-color: $white
-		color: $button
+		background-color: $main
+		color: $white
+		border-color: $white
 
 
 header
@@ -66,7 +73,48 @@ header
 	nav
 		background-color: $grey
 		min-height: 83px
-		padding: 0 70px
+		// padding: 0 70px
+		.container
+			position: relative
+			.btn-menu			
+				position: absolute
+				top: 32px
+				right: 15px
+				width: 32px
+				height: 32px
+				cursor: pointer	
+				z-index: 1000	
+				display: none				
+				span
+					position: absolute
+					width: 100%
+					height: 3px
+					background-color: $button
+					transition: all 0.3s
+					&:nth-child(1)
+						top: 4px
+					&:nth-child(2)
+						top: 16px
+					&:nth-child(3)
+						top: 28px
+				&.open-menu
+					span
+						&:nth-child(1)
+							transform: rotate(45deg)
+							-webkit-transform: rotate(45deg)
+							top: 15px
+							-webkit-transition-delay: 0.3s
+							-o-transition-delay: 0.3s
+							transition-delay: 0.3s
+						&:nth-child(2)
+							width: 0
+						&:nth-child(3)
+							transform: rotate(-45deg)
+							-webkit-transform: rotate(-45deg)
+							top: 15px
+							-webkit-transition-delay: 0.3s
+							-o-transition-delay: 0.3s
+							transition-delay: 0.3s
 		ul
 			text-align: right
 			li
@@ -86,10 +134,11 @@ header
 					&:hover	
 						background-color: $button
 						color: $white
+
 	.block-lang
 		position: absolute
-		top: -8px
-		right: 85px
+		top: 0px
+		right: 0px
 		height: 25px		
 		div
 			display: inline-block
@@ -113,11 +162,28 @@ header
 			&.open:before
 				content: '\25b4'
 			.lang-select
-				display: none
 				text-align: right
-				padding-right: 15px
+				padding-right: 9px
+				position: absolute
+				background: $main
+				padding: 5px
+				right: 4px
+				z-index: 1000
+				li
+					display: block
 				a
 					background-color: $grey
+					line-height: 28px
+					display: inline-block
+					padding: 2px 7px
+					transition: all 0.3s
+					margin-top: 0
+					background-color: transparent
+					color: $white
+					border-radius: 0
+					&:hover
+						background-color: $button
+						color: $white
 	.top-image
 		min-height: 505px
 		position: relative
@@ -137,34 +203,40 @@ header
 			background: -webkit-linear-gradient(left,  $main 33%,rgba(255,255,255,0) 80%)
 			background: linear-gradient(to right,  $main 33%,rgba(255,255,255,0) 80%)
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bbba7', endColorstr='#00ffffff',GradientType=1 )
-			.text-block
-				position: absolute
-				width: 30%
-				min-width: 300px
-				top: 50%
-				transform: translateY(-50%)
-				-webkit-transform: translateY(-50%)
-				-moz-transform: translateY(-50%)
-				left: 85px
-				color: $white
-				h1
-					font-size: 50px
-					font-family: "RobotoRegular", sans-serif
-					font-weight: 100
-					line-height: 45px
-					margin-top: -25px;
-					margin-bottom: 18px;
-				h3
-					font-size: 25px
-					font-family: "RobotoRegular", sans-serif
-					font-weight: 100
-					line-height: 35px
-				p
-					margin-bottom: 30px
-					margin-top: 12px
-					line-height: 22px
-				.btn
-					margin-left: 15px
+			.container
+				position: relative
+				min-height: 505px
+				.text-block
+					position: absolute
+					width: 30%
+					min-width: 490px
+					top: 50%
+					transform: translateY(-50%)
+					-webkit-transform: translateY(-50%)
+					-moz-transform: translateY(-50%)
+					left: 15px
+					color: $white
+					h1
+						font-size: 50px
+						font-family: "RobotoRegular", sans-serif
+						font-weight: 100
+						line-height: 45px
+						margin-top: -25px;
+						margin-bottom: 18px;
+					h3
+						font-size: 25px
+						font-family: "RobotoRegular", sans-serif
+						font-weight: 100
+						line-height: 35px
+					p
+						margin-bottom: 30px
+						margin-top: 12px
+						line-height: 22px
+					.btn
+						margin-left: 15px
+						&:hover
+							background-color: $main
+							color: $white
 
 
 

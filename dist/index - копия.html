@@ -32,12 +32,12 @@
 		<nav>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2">
 						<a href="#" class="logo">
 							<img src="img/logo.png" alt="cisco">
 						</a>
 					</div>
-					<div class="col-md-10 col-sm-10 navigation">		
+					<div class="col-md-10 navigation">		
 						<ul>
 							<li><a href="#slider">О решении</a></li>
 							<li><a href="#ip-phone">Возможности</a></li>
@@ -46,42 +46,35 @@
 						</ul>
 					</div>
 				</div>
-				<div class="btn-menu">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<div class="block-lang">
-					<div class="contact-block">
-						<i class="fa fa-phone"></i>
-						<a href="tel://0 800 502 580">0 800 502 580</a>
-					</div>
-					<div class="lang-switch">
-						<p class="lang">Язык: <span>RU</span></p>
-						<ul class="lang-select" style="display: block;">	<li class="lang-item lang-item-18 lang-item-uk current-lang"><a hreflang="uk" href="#">uk</a></li>
-							<li class="lang-item lang-item-9 lang-item-ru"><a hreflang="ru-RU" href="#">ru</a></li>
-						</ul>
-					</div>
-				</div>
 			</div>
 		</nav>
-
+		<div class="block-lang">
+			<div class="contact-block">
+				<i class="fa fa-phone"></i>
+				<a href="tel://0 800 502 580">0 800 502 580</a>
+			</div>
+			<div class="lang-switch">
+				<p class="lang">Язык: <span>RU</span></p>
+				<ul class="lang-select">
+					<li><a href="#">EN</a></li>
+					<li><a href="#">UA</a></li>
+				</ul>
+			</div>
+		</div>
 
 		<div class="top-image parallax" data-speed="0.4">
 			<img class="background" src="img/top_bg1.jpg" alt="foto">
 			<div class="descr">
-				<div class="container">
-					<div class="text-block">
-						<h1>Cisco BE6000.</h1>
-						<h3>Единое решение
-							для бизнес-коммуникаций
-							внутри вашей компании.
-						</h3>
-						<p>Cisco представляет BE6000 — решение нового поколения для компаний от 25 человек, с которым можно расширить возможности связи с минимумом усилий и ресурсов. Существующую инфраструктуру при этом менять вовсе не обязательно. 
-						</p>
+				<div class="text-block">
+					<h1>Cisco BE6000.</h1>
+					<h3>Единое решение
+						для бизнес-коммуникаций
+						внутри вашей компании.
+					</h3>
+					<p>Cisco представляет BE6000 — решение нового поколения для компаний от 25 человек, с которым можно расширить возможности связи с минимумом усилий и ресурсов. Существующую инфраструктуру при этом менять вовсе не обязательно. 
+					</p>
 
-						<a href="#countdown" class="btn">Действует акция</a>
-					</div>
+					<a href="#countdown" class="btn">Действует акция</a>
 				</div>
 			</div>
 		</div>
@@ -112,28 +105,28 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="tabs-link">
-						<li class="ip-phone">
-							<a href="#ip-phone">
+						<li>
+							<a href="#">
 								<i class="icon-ip-phone"></i>IP-телефония
 							</a>
 						</li>
-						<li class="web">
-							<a href="#web">
+						<li>
+							<a href="#">
 								<i class="icon-video"></i>видеосвязь
 							</a>
 						</li>
-						<li class="mobile">
-							<a href="#mobile">
+						<li>
+							<a href="#">
 								<i class="icon-mobile"></i>мобильная работа
 							</a>
 						</li>
-						<li class="conference">
-							<a href="#conference">
+						<li>
+							<a href="#">
 								<i class="icon-conference"></i>Конференц-связь
 							</a>
 						</li>
-						<li class="contact-center">
-							<a href="#contact-center">
+						<li>
+							<a href="#">
 								<i class="icon-contact-centre"></i>контакт-центр
 							</a>
 						</li>
@@ -143,10 +136,7 @@
 		</div>
 		<div class="tabs-wrap">
 			<!--START tab-1 -->
-			<p class="ip-phone mob-b">				
-					<i class="icon-ip-phone"></i>IP-телефония		
-			</p>
-			<div class="tab"  id="ip-phone">
+			<div class="tab">
 				<div class="tab-header">
 					<div class="img-wrap">
 						<img src="img/tab.jpg" alt="girl">
@@ -183,7 +173,7 @@
 						</div>
 					</div>
 				</div>
-				<section>
+				<section id="ip-phone">
 					<h2>IP-телефония с BE6000 — это...</h2>
 					<div class="container-fluid">
 						<div class="row">
@@ -224,13 +214,9 @@
 			</div>
 			<!--END tab-1 -->
 
-		<p class="ip-phone mob-b">
-				<a href="#ip-phone">
-					<i class="icon-ip-phone"></i>IP-телефония
-				</a>
-			</p>
+
 			<!--START tab-2 -->
-			<div class="tab"  id="web">
+			<div class="tab">
 				<div class="tab-header">
 					<div class="img-wrap">
 						<img src="img/tab2.jpg" alt="girl">
@@ -251,7 +237,7 @@
 						</div>
 					</div>
 				</div>
-				<section>
+				<section id="web">
 					<h2>Преимущества BE6000 для видеосвязи.</h2>
 					<div class="container-fluid">
 						<div class="row">
@@ -316,13 +302,9 @@
 			</div>
 			<!--END tab-2 -->
 
-		<p class="ip-phone mob-b">
-				<a href="#ip-phone">
-					<i class="icon-ip-phone"></i>IP-телефония
-				</a>
-			</p>
+
 			<!--START tab-3 -->
-			<div class="tab"  id="mobile">
+			<div class="tab">
 				<div class="tab-header">
 					<div class="img-wrap">
 						<img src="img/tab3.jpg" alt="girl">
@@ -342,7 +324,7 @@
 						</div>
 					</div>
 				</div>
-				<section>
+				<section id="mobile">
 					<div class="dop-info">
 						
 						<div class="container">
@@ -439,7 +421,7 @@
 			<!--END tab-3 -->
 
 			<!--START tab-4 -->
-			<div class="tab"  id="conference">
+			<div class="tab">
 				<div class="tab-header">
 					<div class="img-wrap">
 						<img src="img/tab4.jpg" alt="girl">
@@ -479,7 +461,7 @@
 						</div>
 					</div>
 				</div>
-				<section>
+				<section id="conference">
 					<h2>Конференц-связь с BE6000 — это...</h2>
 					<div class="container-fluid">
 						<div class="row">
@@ -522,7 +504,7 @@
 				<!--END tab-4 -->
 
 				<!--START tab-5 -->
-				<div class="tab"  id="contact-center">
+				<div class="tab">
 					<div class="tab-header">
 						<div class="img-wrap">
 							<img src="img/tab5.jpg" alt="girl">
@@ -542,7 +524,7 @@
 							</div>
 						</div>
 					</div>
-					<section>
+					<section id="contact-center">
 						<h2>Возможности Cisco Unified Contact Center Express</h2>
 						<p>
 							С Cisco UCC в составе BE6000 ваши операторы смогут не только обрабатывать звонки и письма, но и общаться с клиентами в веб-чате, обслуживать их обращения в социальных сетях и принимать видеозвонки.
@@ -898,43 +880,29 @@
 			<h4>
 				Предлагаем специальные условия при покупке Cisco BE6000 до 29 апреля 2016.
 			</h4>
-			<div class="textwidget">
-				<p>
-					Приобретение и интеграция Cisco BE6000 — это важный шаг вперед для вашей компании. Чтобы сделать его <br>максимально комфортным для вас, наши партнеры бесплатно обучат ваших сотрудников управлению BE6000, а также<br> предоставят один бесплатный видеотелефон, чтобы вы смогли прочувствовать все преимущества использования <br>защищенной и надежной видеосвязи.
-				</p>
-			</div>
+			<p>
+				Приобретение и интеграция Cisco BE6000 — это важный шаг вперед для вашей компании. Чтобы сделать его <br>максимально комфортным для вас, наши партнеры бесплатно обучат ваших сотрудников управлению BE6000, а также<br> предоставят один бесплатный видеотелефон, чтобы вы смогли прочувствовать все преимущества использования <br>защищенной и надежной видеосвязи.
+			</p>
 			<div class="countdown-deskr">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 clrp">
 							<div class="countdown-item">
 								<img src="img/coun1.jpg" alt="man">
-								<div class="title">
-									<div class="cont">
-										<h3 class="head">
-											Бесплатное техническое обучение
-										</h3>
-										<p>
-											В течение нескольких дней специалист поможет вашему сетевому инженеру или IT-администратору быстро разобраться в нюансах настройки и работы BE6000, научит развертывать и обслуживать клиенты Cisco Jabber, познакомит со спецификой эксплуатации средств видеосвязи и ответит на все возникающие вопросы. После обучения ваш специалист получит специальный сертификат от учебного комплекса ERC.
-										</h3>
-									</div>
-								</div>
+								<p class="title">
+									Бесплатное техническое обучение
+								</p>
 							</div>
 						</div>
-						<div class="col-md-6 clrp">							
-							<div class="countdown-item">
-								<img src="img/coun3.jpg" alt="man">
-								<div class="title">						
-									<div class="cont">
-										<h3 class="head">
-											Видеотелефон в подарок
-										</h3>
-										<p>
-											В качестве акции мы поставляем с решением BE6000 видеотелефон Cisco IP Phone 8845, легко интегрирующийся в имеющую IP-инфраструктуру. Это продвинутое устройство с камерой высокого разрешения, поддержкой Bluetooth для общения посредством гарнитуры и пятидюймовым экраном для быстрого и удобного управления настройками, сообщениями и контактной книгой. 
-										</p>
-									</div>
-								</div>
-							</div>							
+						<div class="col-md-6 clrp">
+							<div class="text-block">
+								<h3>
+									Видеотелефон в подарок
+								</h3>
+								<p>
+									В качестве акции мы поставляем с решением BE6000 видеотелефон Cisco IP Phone 8845, легко интегрирующийся в имеющую IP-инфраструктуру. Это продвинутое устройство с камерой высокого разрешения, поддержкой Bluetooth для общения посредством гарнитуры и пятидюймовым экраном для быстрого и удобного управления настройками, сообщениями и контактной книгой. 
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -953,7 +921,7 @@
 					placeholder="email">	
 					<input type="text" name="phone" id="phone-visible" required="" placeholder="Номер телефона">		
 
-					<button type="submit" class="btn mt3">Получить консультацию</button>
+					<button type="submit" class="btn mt3">Заказать просчет</button>
 
 
 					<input type="hidden" name="project_name" value="tsumbaluk.in.ua">
@@ -961,9 +929,7 @@
 					<input type="hidden" name="form_subject" value="Заявка с портфолио">
 				</form>
 			</div>
-			<div class="descr">
-				<p class="mw8">Мы лучше всех понимаем, что решение о приобретении и интеграции Cisco <br> BE6000 должно быть взвешенным и обоснованным. Если у вас есть сомнения,<br> предлагаем вам посетить демостенд в Киеве, посмотреть на решение в работе и<br> заодно узнать оптимальную для вас конфигурацию, цены и другую интересующую<br> вас информацию у представителей нашего партнера.</p>
-			</div>
+			<p class="mw8">Мы лучше всех понимаем, что решение о приобретении и интеграции Cisco <br> BE6000 должно быть взвешенным и обоснованным. Если у вас есть сомнения,<br> предлагаем вам посетить демостенд в Киеве, посмотреть на решение в работе и<br> заодно узнать оптимальную для вас конфигурацию, цены и другую интересующую<br> вас информацию у представителей нашего партнера.</p>
 		</section>
 
 		<section id="contacts" style="background-image: url(img/contacts_bg.jpg)">
@@ -984,7 +950,7 @@
 				</div>
 				<div class="col-md-6">
 					<form class="form" action="mail.php" method="post">
-						<h4>Записаться на демонстрацию</h4>
+						<h4>Запись на посещение демоцентра:</h4>
 						<input type="text" name="name" id="name-visible" required="" placeholder="Ваше имя">	
 						<input type="text" name="name" id="company-visible" required="" placeholder="Компания">			
 						<input type="email" name="mail" id="mail-visible" required=""
@@ -1031,43 +997,6 @@
 			</div>
 		</div>
 	</footer>	
-	<div class="popup">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<form class="form" action="mail.php" method="post">
-						<h4>Записаться на демонстрацию</h4>
-						<input type="text" name="name" id="name-visible" required="" placeholder="Ваше имя">	
-						<input type="text" name="name" id="company-visible" required="" placeholder="Компания">			
-						<input type="email" name="mail" id="mail-visible" required=""
-						placeholder="email">	
-						<input type="text" name="phone" id="phone-visible" required="" placeholder="Номер телефона">		
-
-						<fieldset>
-							<legend>
-								Планируете ли Вы покупку в течении ближайших 12 месяцев?  
-							</legend>
-							<input type="checkbox" name="buy" value="Да" /><span>Да </span>
-							<input type="checkbox" name="buy" value="Нет" /><span>Нет</span>
-							<input type="checkbox" name="buy" value="Не знаю" /><span>Не знаю</span>
-						</fieldset>
-						
-						<p><input type="checkbox" name="subscription" value="check" />Я бы хотел получать от компании Cisco информацию о будущих аналитических 
-							материалах, web-презентациях, мероприятиях и т.д.
-						</p>
-
-						<button type="submit" class="btn">Отправить</button>
-
-
-						<input type="hidden" name="project_name" value="tsumbaluk.in.ua">
-						<input type="hidden" name="admin_email" value="tsumbaluk888@gmail.com">
-						<input type="hidden" name="form_subject" value="Заявка с портфолио">
-					</form>
-				</div>
-			</div>
-		</div>
-
-	</div>
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
 	<script src="libs/html5shiv/html5shiv.min.js"></script>

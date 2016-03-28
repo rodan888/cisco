@@ -10,13 +10,15 @@ jQuery(function() {
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
 	jQuery("form").submit(function() { //Change
-		var th = jQuery(this);
+		var th = jQuery(this),
+				redirect = th.data('redirect');
 		jQuery.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: this.action, //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			location.href= redirect;
+			// alert("Thank you!");
 			setTimeout(function() {
 				// Done Functions
 				th.trigger("reset");
@@ -42,58 +44,28 @@ jQuery(function() {
 			if(jQuery().parallax) jQuery('.parallax').parallax();
 	});
 		
-	
+	jQuery('#thank-you').height(jQuery(window).height() - (jQuery('header').height()+jQuery('footer').height()));
 
-		// smoof-scroll
-	var navigation_links = jQuery("nav a, .top-image a");
-	navigation_links.click( function(event) {
-		event.preventDefault();
-		jQuery.scrollTo(
-			jQuery(this).attr("href"),
-			{
-				duration: 600,
-				offset: { 'left':0, 'top':0.0*jQuery(window).height() }
-			}
-		);
-	});		
-
-	// jQuery('section').waypoint({
-	// 	handler: function(event, direction) {
-	// 		var active_section = jQuery(this);			
-	// 		if (direction === "up") active_section = active_section.prev();
-	// 		var active_link = jQuery('nav a[href="#' + active_section.attr("id") + '"]');
-	// 		navigation_links.removeClass("active_nav");
-	// 		active_link.addClass("active_nav");
-	// 	},
-	// 	offset: '5%'
-	// });
-
+	//mobile button
+	jQuery('.btn-menu').on('click',function(){
+		jQuery(this).toggleClass('open-menu');
+		jQuery('.navigation ul').slideToggle('fast');
+	});
 
 	//lang-switch
 	jQuery('.lang-switch .lang').click(function() {	
 		jQuery(this).parent().toggleClass('open');
 		jQuery(this).next().slideToggle('fust');
 	});
-
-	jQuery('.lang-select a').on('click',function(){
-		var selectLeng = jQuery(this).text();
-		jQuery('.lang').find('span').text(jQuery(this).text());
-	});
+	// langSwitch('.lang');
+	// jQuery('.lang-select a').on('click',function(){
+	// 	var selectLeng = jQuery(this).text();
+	// 	jQuery('.lang').find('span').text(jQuery(this).text());
+	// });
 
 	
-// countdown
-var countdown = function(block){
-	var time = jQuery(block).data('time');
-	jQuery(block).countdown( time , function(event) {
-		jQuery(this).html(event.strftime(''
-			 +'<div><p> %D </p><span>дней</span></div>'
-			 +'<div><p> %H </p><span>часов</span></div>'
-			 +'<div><p> %M </p><span>минут</span></div> '
-			 +'<div><p> %S </p><span>секунд</span></div> '
-		 ));
-	});
-};
-	countdown('#clock');
+
+	
 
 	//owl slider
 	jQuery("#slider-owl").owlCarousel({ 
@@ -104,11 +76,10 @@ var countdown = function(block){
 			 pagination: true,
 			 singleItem:true,		
 			 navigationText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">']
-			});
-	
-	langSwitch('.lang');
-
+			});	
+	countdown('#clock');
 	tabs();
+	smoofScroll();
 
 	// particlesJS Json config http://www.jqueryrain.com/?BwjN6Dnf
 particlesJS('particles-js',		
@@ -223,9 +194,58 @@ particlesJS('particles-js',
 	"retina_detect": true
 });
 
+jQuery(window).scroll(function(){
+	var scr  = jQuery(this).scrollTop(),
+			tabs = jQuery('#tabs'),
+			tabsOffset = tabs.offset().top;
+
+	if (scr > tabsOffset & winWidth() > 768) {	
+		tabs.addClass('fixed-tabs');			
+		}else{
+			tabs.removeClass('fixed-tabs');
+		};
 });
 
- 
+$('.navigation ul li:last a').on('click',function(event){	
+	event.preventDefault();
+	$('.popup').append('<span class="fade_out">&#9587;</span>').fadeIn('slow');
+
+	$('.fade_out').click(function(){
+		$('.popup').fadeOut('slow');
+		$(this).detach();
+	});
+});
+
+});
+function winWidth(){
+	return jQuery(window).width();
+};
+ // countdown
+var countdown = function(block){
+	var time = jQuery(block).data('time');
+	jQuery(block).countdown( time , function(event) {
+		jQuery(this).html(event.strftime(''
+			 +'<div><p> %D </p><span>дней</span></div>'
+			 +'<div><p> %H </p><span>часов</span></div>'
+			 +'<div><p> %M </p><span>минут</span></div> '
+			 +'<div><p> %S </p><span>секунд</span></div> '
+		 ));
+	});
+};
+
+// smoof-scroll
+function smoofScroll(){
+	var btnPopup = jQuery('.navigation ul li:last-child a'),
+	    navigation_links = jQuery(".navigation ul li a, .top-image a").not(btnPopup);
+
+
+	navigation_links.click( function(event) {
+		event.preventDefault();
+	   var   blocks = jQuery(this).attr('href'),
+	    		 positionBlock = jQuery(blocks).offset();
+	    		 jQuery('html,body').animate({scrollTop: positionBlock.top}, 1000);		
+			});		
+};
 
 function langSwitch(block){
 	var pathname = window.location.pathname;
@@ -239,15 +259,32 @@ function langSwitch(block){
 
 function tabs(){	
 	var tabsLi   = jQuery('.tabs-link li'),
-			tabsLink = tabsLi.find('a');
-	tabsLi.first().addClass('active');
+			tabsLink = tabsLi.find('a'),
+			tab      = jQuery('.tabs-wrap .tab'),
+	    loc      = window.location.hash,
+	    loca     = loc.substr(1),
+	    tabsOffset = jQuery('#tabs').offset();
+
+		if(loc){
+			jQuery('.tabs-link li.'+ loca +'').addClass('active');
+			tab.css('display','none');
+			jQuery('.tab#'+ loca +'').css('display','block');
+		}else{
+			tabsLi.first().addClass('active');
+			jQuery('#ip-phone').css('display','block');
+		};
+
+		jQuery('.mob-b').on('click', function(){
+			// jQuery('.tab').not(jQuery(this).next()).slideUp('slow');
+			jQuery(this).toggleClass('open').next().slideToggle('slow');
+		});
 
 	tabsLink.on('click', function(event){
-		event.preventDefault();        
+		event.preventDefault();      
 		var link  = jQuery(this).parent('li'),
-				index = link.index(),
-				tab   = jQuery('.tabs-wrap .tab');
+				index = link.index();	
 
+		jQuery('html,body').animate({scrollTop: tabsOffset.top}, 1000);	
 		tabsLi.removeClass('active');
 		link.addClass('active');
 		tab.css('display','none');
@@ -257,4 +294,6 @@ function tabs(){
 		// .addClass('fadeInUp');
 	});
 };
+
+
 
